@@ -22,10 +22,11 @@ const Search = () => {
         <input
           type="text"
           placeholder="Search products"
-          className="border border-gray-300 focus:border-gray-400 h-12 text-xl px-3 w-full outline-none max-sm:text-lg"
+          defaultValue={searchParams.get("query") || ""}
+          className="bg-[#141414] text-white placeholder-neutral-500 border border-white/10 focus:border-amber-500 h-12 text-xl px-3 w-full outline-none max-sm:text-lg transition-colors"
           name="searchInput"
         />
-        <div className="w-52 max-sm:w-40">
+        <div className="w-52 max-sm:w-40 bg-amber-500 hover:bg-amber-400 h-12 flex items-center justify-center transition-colors">
           <Button mode="brown" text="Search" type="submit" />
         </div>
       </Form>
@@ -38,4 +39,5 @@ const Search = () => {
     </div>
   );
 };
+
 export default Search;

@@ -13,6 +13,9 @@ export const API_ENDPOINTS = {
     UPDATE_EMAIL: '/api/user/update-email',
     ACTIVATE: (id: string | number, isActive: boolean) => `/api/user/${id}/activate?isActive=${isActive}`, // PATCH
   },
+  PAYMENTS: {
+    PROCESS_JAZZCASH: '/api/payment/process-jazzcash', // POST
+  },
   
   CART: {
     GET_CART: (userId: string | number) => `/api/cart/${userId}`,     // GET /api/cart/1

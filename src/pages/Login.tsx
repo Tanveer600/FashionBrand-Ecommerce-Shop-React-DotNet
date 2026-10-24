@@ -28,36 +28,45 @@ const Login = () => {
       loginRequest({
         email: data.email,
         password: data.password,
-        navigate, // ✅ Yahan navigate pass kiya gaya hai
+        navigate,
       })
     );
   };
 
   return (
-    <div className="max-w-screen-2xl mx-auto pt-24 flex items-center justify-center">
+    <div className="bg-[#0a0a0a] min-h-screen text-white flex items-center justify-center px-4 py-16">
       <form
         onSubmit={handleLogin}
-        className="max-w-5xl mx-auto flex flex-col gap-5 max-sm:gap-3 items-center justify-center max-sm:px-5 w-full px-4"
+        className="max-w-xl mx-auto flex flex-col gap-6 items-center justify-center w-full bg-[#121212] border border-white/10 rounded-2xl p-8 sm:p-10 shadow-2xl"
       >
-        <h2 className="text-5xl text-center mb-5 font-thin max-md:text-4xl max-sm:text-3xl max-[450px]:text-xl max-[450px]:font-normal">
-          Welcome Back! Login here:
+        <h2 className="text-3xl sm:text-4xl text-center font-serif tracking-wide text-white mb-2">
+          Welcome Back!
         </h2>
-        <div className="flex flex-col gap-2 w-full">
-          <div className="flex flex-col gap-1">
-            <label htmlFor="email">Your email</label>
+        <p className="text-neutral-400 text-xs uppercase tracking-[0.2em] -mt-4 mb-2">
+          Login to your account
+        </p>
+
+        <div className="flex flex-col gap-4 w-full">
+          <div className="flex flex-col gap-2">
+            <label htmlFor="email" className="text-xs font-semibold uppercase tracking-widest text-neutral-400">
+              Your Email
+            </label>
             <input
               type="email"
-              className="bg-white border border-black text-xl py-2 px-3 w-full outline-none max-[450px]:text-base"
+              className="bg-[#161616] border border-white/10 text-white placeholder-neutral-500 text-base py-3 px-4 w-full rounded-xl outline-none focus:border-amber-500 transition-colors"
               placeholder="Enter email address"
               name="email"
               required
             />
           </div>
-          <div className="flex flex-col gap-1">
-            <label htmlFor="password">Your password</label>
+
+          <div className="flex flex-col gap-2">
+            <label htmlFor="password" className="text-xs font-semibold uppercase tracking-widest text-neutral-400">
+              Your Password
+            </label>
             <input
               type="password"
-              className="bg-white border border-black text-xl py-2 px-3 w-full outline-none max-[450px]:text-base"
+              className="bg-[#161616] border border-white/10 text-white placeholder-neutral-500 text-base py-3 px-4 w-full rounded-xl outline-none focus:border-amber-500 transition-colors"
               placeholder="Enter password"
               name="password"
               required
@@ -67,17 +76,17 @@ const Login = () => {
 
         <button
           type="submit"
-          className="bg-[#5c4033] text-white py-3 px-6 text-xl w-full cursor-pointer hover:opacity-90 transition"
+          className="w-full bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs tracking-[0.2em] uppercase py-4 rounded-xl transition-all duration-300 shadow-xl shadow-amber-500/20 active:scale-[0.99] mt-2 cursor-pointer"
         >
           Login
         </button>
 
         <Link
           to="/register"
-          className="text-xl max-md:text-lg max-[450px]:text-sm"
+          className="text-sm text-neutral-400 hover:text-white transition-colors tracking-wide mt-2"
         >
           Don’t have an account?{" "}
-          <span className="text-secondaryBrown">Register now</span>.
+          <span className="text-amber-400 font-semibold underline underline-offset-4">Register now</span>.
         </Link>
       </form>
     </div>
